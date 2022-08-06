@@ -13,16 +13,20 @@ capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
 local status, jdtls = pcall(require, "jdtls")
 if not status then
+vim.notify "JDTLS not found, install with `:LspInstall jdtls`"
   return
 end
+-- Installation location of jdtls by nvim-lsp-installer
+local JDTLS_LOCATION = "/.local/share/nvim/lsp_servers/jdtls"-- hard  code location 
+-- local JDTLS_LOCATION = vim.fn.stdpath "data" .. "/lsp_servers/jdtls" --  std  path  for nvim eg(:echo stdpath("config"))  
 
 -- Determine OS
-local home = os.getenv "HOME"
+local home = (os.getenv "HOME")
 if vim.fn.has "mac" == 1 then
   WORKSPACE_PATH = home .. "/workspace/"
   CONFIG = "mac"
 elseif vim.fn.has "unix" == 1 then
-  WORKSPACE_PATH = home .. "/workspace/"
+  WORKSPACE_PATH = home .."/.cache".. "/workspace/"
   CONFIG = "linux"
 else
   print "Unsupported system"
@@ -76,7 +80,7 @@ local config = {
     "-Declipse.product=org.eclipse.jdt.ls.core.product",
     "-Dlog.protocol=true",
     "-Dlog.level=ALL",
-    "-javaagent:" .. home .. "/.local/share/nvim/lsp_servers/jdtls/lombok.jar",
+    "-javaagent:" .. home .. JDTLS_LOCATION .. "/lombok.jar",
     "-Xms1g",
     "--add-modules=ALL-SYSTEM",
     "--add-opens",
@@ -86,14 +90,14 @@ local config = {
 
     -- 💀
     "-jar",
-    vim.fn.glob(home .. "/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
+    vim.fn.glob(home .. JDTLS_LOCATION .. "/plugins/org.eclipse.equinox.launcher_*.jar"),
     -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
     -- Must point to the                                                     Change this to
     -- eclipse.jdt.ls installation                                           the actual version
 
     -- 💀
     "-configuration",
-    home .. "/.local/share/nvim/lsp_servers/jdtls/config_" .. CONFIG,
+    home .. JDTLS_LOCATION .. "/config_" .. CONFIG,
     -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
     -- Must point to the                      Change to one of `linux`, `win` or `mac`
     -- eclipse.jdt.ls installation            Depending on your system.
@@ -147,10 +151,10 @@ local config = {
         },
       },
       format = {
-        enabled = false,
-        -- settings = {
-        --   profile = "asdf"
-        -- }
+        enabled = true,
+        settings = {home .. "/.config/nvim/lang-servers/intellij-java-google-style.xml",
+        profile = "GoogleStyle",
+              }
       },
     },
     signatureHelp = { enabled = true },

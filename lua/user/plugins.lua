@@ -107,7 +107,7 @@ return packer.startup(function(use)
 	use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
   use {"SmiteshP/nvim-navic"}
   -- use {"ray-x/lsp_signature.nvim"}
-   
+  
   -- use "simrat39/symbols-outline.nvim"
   -- use "b0o/SchemaStore.nvim"
   -- use "github/copilot.vim"

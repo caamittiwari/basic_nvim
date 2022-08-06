@@ -5,7 +5,7 @@ end
 
 local lspconfig = require("lspconfig")
 
-local servers = { "jsonls", "sumneko_lua" , "pyright" , "sqls" }
+local servers = { "jsonls", "sumneko_lua" , "pyright" , "sqls","lemminx" }
 
 
 
