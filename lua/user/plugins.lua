@@ -41,6 +41,7 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
 	-- My plugins here
+
   -- Plugin Mangager
 	use({ "wbthomason/packer.nvim", commit = "00ec5adef58c5ff9a07f11f45903b9dbbaa1b422" }) -- Have packer manage itself
 
@@ -51,7 +52,7 @@ return packer.startup(function(use)
 	use({ "numToStr/Comment.nvim", commit = "2c26a00f32b190390b664e56e32fd5347613b9e2" })-- for commenting code  
 
    -- Terminal
-	use({ "akinsho/toggleterm.nvim", commit = "aaeed9e02167c5e8f00f25156895a6fd95403af8" })
+	use({ "akinsho/toggleterm.nvim"})  -- commit = "2966cfe2" })
 
   -- Editing Support
 	use({ "windwp/nvim-autopairs", commit = "fa6876f832ea1b71801c4e481d8feca9a36215ec" }) -- Autopairs, integrates with both cmp and treesitter
@@ -67,6 +68,7 @@ return packer.startup(function(use)
   -- Utility
 	use({ "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" })
 	use({ "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" })
+  use {"matbme/JABS.nvim"}
 
   -- Statusline
 	use({ "nvim-lualine/lualine.nvim", commit = "3362b28f917acc37538b1047f187ff1b5645ecdd" })
@@ -101,12 +103,12 @@ return packer.startup(function(use)
 
 	-- LSP
 	use({ "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" }) -- enable LSP
-	use({ "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" }) -- simple to use language server installer
+	use({ "williamboman/nvim-lsp-installer",commit=" d6f873754b7a5f50d4c70f76de1d7e8ea009bf56" --[[ commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" ]] }) -- simple to use language server installer
   -- use {"williamboman/mason.nvim"}
   -- use {"williamboman/mason-lspconfig.nvim"}
 	use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
   use {"SmiteshP/nvim-navic"}
-  -- use {"ray-x/lsp_signature.nvim"}
+  use {"ray-x/lsp_signature.nvim"}
   
   -- use "simrat39/symbols-outline.nvim"
   -- use "b0o/SchemaStore.nvim"
@@ -146,6 +148,9 @@ return packer.startup(function(use)
   use({"mfussenegger/nvim-dap",commit ="674ca42694254ea282f6cb44357dea093d2b29a5"})
   use ({ "rcarriga/nvim-dap-ui" })
   use ({ "ravenxrz/DAPInstall.nvim"})
+
+  -- Marks
+   use {"christianchiarulli/harpoon"}
 
   -- sql 
   use ({'nanotee/sqls.nvim'})
