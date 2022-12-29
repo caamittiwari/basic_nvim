@@ -4,7 +4,7 @@ return {
 		Python= {
 			analysis = {
       autoSearchPaths = true,
-      -- diagnosticMode = "workspace",
+      diagnosticMode = "workspace",
       useLibraryCodeForTypes = true,
       typeCheckingMode = "off"
     }
