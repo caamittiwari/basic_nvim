@@ -36,6 +36,11 @@ vim.g.maplocalleader = " "
 Keymap("n",';',':')
 Keymap("v",';',':')
 
+-- Save buffer  
+Keymap("n","<C-s>","<cmd>w!<CR>")
+Keymap("v","<C-s>","<cmd>w!<CR>")
+Keymap("v","<C-s>","<cmd>w!<CR>")
+
 -- Better window navigation 
 Keymap("n", "<C-h>", "<C-w>h"  )
 Keymap("n", "<C-j>", "<C-w>j" )

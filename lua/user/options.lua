@@ -33,14 +33,16 @@ local options = {
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
   guifont = "Hack:12",                     -- the font used in graphical neovim applications
+  
 }
 
 vim.opt.shortmess:append "c"
 
+
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
-
+vim.g.python3_host_prog = '/usr/sbin/python3'
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work

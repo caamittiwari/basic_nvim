@@ -68,7 +68,7 @@ return packer.startup(function(use)
   -- Utility
 	use({ "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" })
 	use({ "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" })
-  use {"matbme/JABS.nvim"}
+  -- use {"matbme/JABS.nvim"}
 
   -- Statusline
 	use({ "nvim-lualine/lualine.nvim", commit = "3362b28f917acc37538b1047f187ff1b5645ecdd" })
@@ -106,8 +106,9 @@ return packer.startup(function(use)
 	use({ "williamboman/nvim-lsp-installer",commit=" d6f873754b7a5f50d4c70f76de1d7e8ea009bf56" --[[ commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" ]] }) -- simple to use language server installer
   -- use {"williamboman/mason.nvim"}
   -- use {"williamboman/mason-lspconfig.nvim"}
-	use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
-  use {"SmiteshP/nvim-navic"}
+	use({ "jose-elias-alvarez/null-ls.nvim",commit =" eaacba0b93c416252894f8bdc68e6b50b4e4c3b4" }) -- for formatters and linters commit = "ff40739e5be6581899b43385997e39eecdbf9465" 
+
+  use {"SmiteshP/nvim-navic", commit ="94bf6fcb1dc27bdad230d9385da085e72c390019" }
   use {"ray-x/lsp_signature.nvim"}
   
   -- use "simrat39/symbols-outline.nvim"
@@ -128,6 +129,10 @@ return packer.startup(function(use)
   -- use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
+  use { "nvim-lua/plenary.nvim" }
+  use { "nvim-lua/popup.nvim" }
+  use {'nvim-telescope/telescope-media-files.nvim'}
+  use {'edluffy/hologram.nvim'}
 
   -- Syntax/Treesitter
 	use({
@@ -150,7 +155,7 @@ return packer.startup(function(use)
   use ({ "ravenxrz/DAPInstall.nvim"})
 
   -- Marks
-   use {"christianchiarulli/harpoon"}
+   -- use {"christianchiarulli/harpoon"}
 
   -- sql 
   use ({'nanotee/sqls.nvim'})
