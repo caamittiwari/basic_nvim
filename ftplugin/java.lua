@@ -17,8 +17,8 @@ vim.notify "JDTLS not found, install with `:LspInstall jdtls`"
   return
 end
 -- Installation location of jdtls by nvim-lsp-installer
-local JDTLS_LOCATION = "/.local/share/nvim/lsp_servers/jdtls"-- hard  code location 
--- local JDTLS_LOCATION = vim.fn.stdpath "data" .. "/lsp_servers/jdtls" --  std  path  for nvim eg(:echo stdpath("config"))  
+-- local JDTLS_LOCATION = "/usr/share/jdtls"-- hard  code location
+local JDTLS_LOCATION = vim.fn.stdpath "data" .. "/lsp_servers/jdtls" --  std  path  for nvim eg(:echo stdpath("config"))
 
 -- Determine OS
 local home = (os.getenv "HOME")

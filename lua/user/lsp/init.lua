@@ -3,8 +3,8 @@ if not status_ok then
   return
 end
 
--- require "user.lsp.configs"
+require "user.lsp.manson"
 require("user.lsp.handlers").setup()
 require "user.lsp.null-ls"
-require "user.lsp.manson"
+-- require "user.lsp.configs"
 -- require "user.lsp.lsp-signature"
